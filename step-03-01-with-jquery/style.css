@@ -1,0 +1,40 @@
+
+body {
+    width: 100%;
+}
+body:after {
+    display: table;
+    content: ' ';
+    clear: both;
+}
+section {
+    float: left;
+    width: 50%;
+}
+
+#hamburger-trigger {
+    cursor: pointer;
+    width: 320px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: antiquewhite;
+    text-align: right;
+    border-bottom: 1px solid black;
+}
+
+.hamburger-menu {
+    width: 320px;
+    display: none;
+}
+    .hamburger-menu > a  {
+        display: block;
+        padding: 30px;
+        text-align: center;
+        background-color: aquamarine;
+        border-bottom: 1px solid black;
+    }
+
+.content {
+    width: 320px;
+    background-color: darkseagreen;
+}

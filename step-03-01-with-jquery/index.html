@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<section>
+    <h1>Un menu Hamburger simple en jquery</h1>
+    <div id="hamburger-trigger" class="fa fa-3x fa-align-justify"></div>
+    <nav class="hamburger-menu">
+        <a href="#">item</a>
+        <a href="#">item</a>
+        <a href="#">item</a>
+        <a href="#">item</a>
+        <a href="#">item</a>
+    </nav>
+    <div class="content">
+        Du contenu qui suit le menu !
+    </div>
+</section>
+<section>
+    <h1>Aide - Jquery shortcuts</h1>
+
+    <div><a href="http://api.jquery.com/category/effects/">différents effets</a></div>
+
+    <p>Maintenant si on veut supporter IE8/IE9 le pure CSS ça passe pas. Heureusement les outils fournis par jquery sont quasi identitque à ceux en CSS (on pourrait probablement dire que c'est plutôt les outils CSS qui ressemble à ceux jquery ;))</p>
+    <p>Ici l'on va reprendre l'exemple du premier exercice mais en utilisant seulement "slideToggle" de jquery pour commencer</p>
+    <div>Exemple :</div>
+<pre>
+    // scroll de haut en bas et inversement
+    $('#button').click(function () {
+        $('#menu').slideToggle(500); // 500 pour 500ms
+    });
+
+    // apparait disparait par transparence
+    $('#button').click(function () {
+        $('#menu').fadeToggle(500); // 500 pour 500ms
+    });
+</pre>
+    <p>Une fois votre première version faite cliquez autant que possible et observez le résultat. Pas térrible ?</p>
+    <p>Jquery entasse les animations, on a une solution : "stop". "stop" arrète l'animation en cours.</p>
+<pre>
+    // scroll de haut en bas et inversement
+    $('#button').click(function () {
+        $('#menu').stop(true).slideToggle(500); // 500 pour 500ms
+        // true pour cleanQueue qui signifie vider la file, l'on remet donc à zéro la file d'animation.
+    });
+
+    // apparait disparait par transparence
+    $('#button').click(function () {
+        $('#menu').stop(true).fadeToggle(500); // 500 pour 500ms
+    });
+</pre>
+</section>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+    $(function () {
+        // Prêt !!
+
+    });
+</script>
+</body>
+</html>
