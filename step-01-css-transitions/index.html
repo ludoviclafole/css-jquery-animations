@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="step01.css"/>
+</head>
+<body>
+<section>
+    <h1>Un menu Hamburger simple en pure CSS</h1>
+    <!-- Le label avec la checkbox sont les éléments qui font le "tricks" pour se passer du JS avec le selecteur "+" -->
+    <label for="hamburger-trigger" class="fa fa-3x fa-align-justify"></label>
+    <input id="hamburger-trigger" type="checkbox"/>
+    <!-- Fin du "trick" -->
+    <nav class="hamburger-menu">
+        <a href="#">item</a>
+        <a href="#">item</a>
+        <a href="#">item</a>
+        <a href="#">item</a>
+        <a href="#">item</a>
+    </nav>
+    <div class="content">
+        Du contenu qui suit le menu !
+    </div>
+</section>
+<section>
+    <h1>Aide - transition</h1>
+    <strong>Les propriétés de bases :</strong>
+    <dl>
+        <dt>transition-duration</dt>
+        <dd>Ceci permet de définir la durée d'une animation exemples : 2s, 100ms</dd>
+        <dt>transition-property</dt>
+        <dd>Ceci permet de définir les propriétés sur lesquels la transition doit s'appliquer, exemples : all, width, opacity</dd>
+        <dt>transition-timing-function</dt>
+        <dd>Permet de définir la façon dont sera lissé l'animation, exemples: ease, linear, step(4, end)</dd>
+    </dl>
+    <strong>Quelques exemples :</strong>
+    <ul>
+        <li>
+            <pre>
+transition-duration: 2s;
+transition-property: width;
+/* Default to ease */</pre>
+        </li>
+        <li>
+            <pre>
+transition-duration: 2s;
+transition-property: width, opacity;
+transition-timing-function: step(4, end);</pre>
+        </li>
+        <li>
+            <pre>
+transition: width 2s linear;</pre>
+        </li>
+        <li>
+            <pre>
+transition: all 2s linear;</pre>
+        </li>
+    </ul>
+</section>
+</body>
+</html>
