@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<section>
+    <h1>Selection de rotation en pure CSS</h1>
+    <input type="radio" name="sens" id="sens-horaire" value="horaire"/>
+    <label for="sens-horaire">horaire</label>
+    <input type="radio" name="sens" id="sens-anti-horaire" value="anti-horaire"/>
+    <label for="sens-anti-horaire">anti-horaire</label>
+
+    <div id="rotate">
+        <i class="fa fa-smile-o fa-3x"></i>
+    </div>
+</section>
+<section>
+    <h1>Aide - Jquery animate</h1>
+
+    <p>Cette fois l'on vise le même résultat que la step 2. L'on va utilise Jquery.animate mais un peu plus loin</p>
+
+    <div>Exemples :</div>
+<pre>
+    $('.some-class').animate(
+        { "width": "200px" },
+        {
+            "duration":500,
+            "step": function(currentWidth) {
+                console.log(currentWidth); // Log la largeur courante
+            }
+        }
+    );
+</pre>
+<pre>
+    $('.some-class').animate(
+        { "width": "200px", "height": "200px" },
+        {
+            "duration":500,
+            "step": function(currentValue, fx) {
+                console.log(fx.prop + " = " + currentValue); // Log le nom de la propriété + sa valeur courante
+            }
+        }
+    );
+</pre>
+<pre>
+    $('.some-class').animate(
+        { "fakeProp": "120" },
+        {
+            "duration":500,
+            "step": function(currentValue, fx) {
+                console.log(fx.prop + " = " + currentValue); // Applique malgré tout step sur des valeurs non-existantes en CSS
+                $(fx.elem).css({ "width": currentValue+"px" });
+            }
+        }
+    );
+</pre>
+</section>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+    $(function () {
+        // Prêt !!
+        $('input:radio[name="sens"]').change(function () {
+            if($(this).val() == "horaire") {
+                // horaire checked
+            } else {
+                // anti-horaire checked
+            }
+        });
+    });
+</script>
+</body>
+</html>

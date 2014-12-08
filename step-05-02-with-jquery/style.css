@@ -1,0 +1,18 @@
+body {
+    width: 100%;
+}
+body:after {
+    display: table;
+    content: ' ';
+    clear: both;
+}
+section {
+    float: left;
+    width: 50%;
+}
+
+#rotate {
+    width: 320px;
+    height: 320px;
+    text-align: center;
+}
