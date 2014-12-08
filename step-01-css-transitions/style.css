@@ -33,9 +33,11 @@ label[for="hamburger-trigger"] {
     display: block;
     position: relative;
     z-index: 1;
-
-    visibility: hidden;
     height: 0;
+
+
+    /* To animate */
+    visibility: hidden;
     opacity: 0;
     top: -35px;
 }
@@ -43,7 +45,10 @@ label[for="hamburger-trigger"] {
     visibility: visible;
     top:0;
     opacity: 1;
-    height: auto;
+    height: auto; /* Won't be animated height auto does not trigger animation */
+    /* A trick is to use max-height with an higher value than you can have.
+        But if your real height is 50px and you have set max-height to 100px
+        and 1 second animation, the viewable part of the animation will be 0.5 seconds */
 }
     .hamburger-menu > a  {
         display: block;
