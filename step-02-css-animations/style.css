@@ -1,0 +1,40 @@
+body {
+    width: 100%;
+}
+body:after {
+    display: table;
+    content: ' ';
+    clear: both;
+}
+section {
+    float: left;
+    width: 50%;
+}
+
+#rotate {
+    width: 320px;
+    height: 320px;
+    text-align: center;
+}
+
+[value="horaire"]:checked ~ #rotate {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+}
+[value="horaire"]:checked ~ #rotate > i {
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+}
+
+[value="anti-horaire"]:checked ~ #rotate {
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+}
+[value="anti-horaire"]:checked ~ #rotate > i {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+}

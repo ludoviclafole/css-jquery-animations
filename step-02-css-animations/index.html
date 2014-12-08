@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<section>
+    <h1>Selection de rotation en pure CSS</h1>
+    <input type="radio" name="sens" id="sens-horaire" value="horaire"/>
+    <label for="sens-horaire">horaire</label>
+    <input type="radio" name="sens" id="sens-anti-horaire" value="anti-horaire"/>
+    <label for="sens-anti-horaire">anti-horaire</label>
+
+    <div id="rotate">
+        <i class="fa fa-smile-o fa-3x"></i>
+    </div>
+</section>
+<section>
+    <h1>Aide - animation</h1>
+
+    <p>Cela ressemble globalement aux transitions.</p>
+    <div>/!\ Les animations ont encore besoin de prefixes : -webkit-</div>
+    <strong>Les propriétés de bases :</strong>
+    <dl>
+        <dt>animation-duration</dt>
+        <dd>Ceci permet de définir la durée d'une animation exemples : 2s, 100ms</dd>
+        <dt>animation-name</dt>
+        <dd>Le nom de l'animation à utiliser</dd>
+        <dt>animation-timing-function</dt>
+        <dd>Permet de définir la façon dont sera lissé l'animation, exemples: ease, linear, step(4, end)</dd>
+        <dt>animation-iteration-count</dt>
+        <dd>Permet de définir le nombre de fois que l'animation s'exécutera, exemples: 1, 5, infinite</dd>
+        <dt>animation-direction</dt>
+        <dd>Permet de définir le sens d'execution de l'animation (normal, inversé, alterné), exemples: normal, reverse, alternate</dd>
+    </dl>
+    <p>Du coup comment déclarer une animation ? Le plus simple :</p>
+    <pre>
+/* Ici aussi on utilise le préfixe */
+@-webkit-keyframes myAnim {
+    from { width: 200px; }
+    to { width; 300px; }
+}
+@keyframes myAnim {
+    from { width: 200px; }
+    to { width; 300px; }
+}
+    </pre>
+    <p>autre version :</p>
+    <pre>
+@-webkit-keyframes myAnim {
+    0%   { width: 200px; }
+    10%  { width: 240px; }
+    90%  { width: 260px; }
+    100% { width: 300px; }
+}
+@keyframes myAnim {
+    0%   { width: 200px; }
+    10%  { width: 240px; }
+    90%  { width: 260px; }
+    100% { width: 300px; }
+}</pre>
+    <strong>Quelques exemples :</strong>
+    <ul>
+        <li>
+            <pre>
+animation-duration: 2s;
+-webkit-animation-duration: 2s;
+animation-name: myAnim;
+-webkit-animation-name: myAnim;
+/* Default to ease */</pre>
+        </li>
+        <li>
+            <pre>
+animation-duration: 2s;
+-webkit-animation-duration: 2s;
+animation-name: myAnim;
+-webkit-animation-name: myAnim;
+animation-timing-function: step(4, end);
+-webkit-animation-timing-function: step(4, end);</pre>
+        </li>
+        <li>
+            <pre>
+animation: myAnim 2s linear;
+-webkit-animation: myAnim 2s linear;</pre>
+        </li>
+    </ul>
+    <p>Petite aide pour résourde l'exercice : http://www.css3files.com/transform/</p>
+</section>
+</body>
+</html>
